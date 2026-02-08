@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "updatedAt": "2026-02-07T00:00:00Z",
+  "services": [
+    {
+      "id": "amazon-prime",
+      "name": "Amazon Prime",
+      "localizedName": "Amazonプライム",
+      "aliases": ["Prime Video", "Amazon Prime Membership"],
+      "categories": ["Shopping", "Video"],
+      "plans": [
+        { "id": "monthly", "name": "Monthly", "localizedName": "月間プラン" },
+        { "id": "yearly", "name": "Yearly", "localizedName": "年間プラン" }
+      ]
+    },
+    { "id": "apple-arcade", "name": "Apple Arcade", "aliases": ["Arcade"], "categories": ["Gaming"] },
+    { "id": "apple-music", "name": "Apple Music", "aliases": [], "categories": ["Music"] },
+    { "id": "audible", "name": "Audible", "aliases": ["Amazon Audible"], "categories": ["Books", "Audio"] },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "localizedName": "ChatGPT",
+      "aliases": ["OpenAI ChatGPT"],
+      "categories": ["AI", "IT", "Productivity"],
+      "plans": [
+        { "id": "free", "name": "Free", "localizedName": "無料" },
+        { "id": "plus", "name": "Plus", "localizedName": "Plus" },
+        { "id": "pro", "name": "Pro", "localizedName": "Pro" }
+      ]
+    },
+    { "id": "claude", "name": "Claude", "aliases": ["Anthropic Claude"], "categories": ["AI", "IT"] },
+    { "id": "canva", "name": "Canva", "aliases": ["Canva Pro"], "categories": ["Design", "Productivity"] },
+    { "id": "deepl", "name": "DeepL", "aliases": ["DeepL Pro"], "categories": ["AI", "Productivity"] },
+    {
+      "id": "disney-plus",
+      "name": "Disney+",
+      "localizedName": "ディズニープラス",
+      "aliases": ["Disney Plus"],
+      "categories": ["Video", "Entertainment"]
+    },
+    { "id": "dropbox", "name": "Dropbox", "aliases": [], "categories": ["Cloud", "Productivity"] },
+    { "id": "evernote", "name": "Evernote", "aliases": [], "categories": ["Productivity"] },
+    { "id": "figma", "name": "Figma", "aliases": ["Figma Professional"], "categories": ["Design", "IT"] },
+    { "id": "github-copilot", "name": "GitHub Copilot", "aliases": ["Copilot"], "categories": ["AI", "Developer"] },
+    { "id": "google-drive", "name": "Google Drive", "aliases": ["Google One"], "categories": ["Cloud", "Productivity"] },
+    {
+      "id": "hulu",
+      "name": "Hulu",
+      "localizedName": "Hulu",
+      "aliases": [],
+      "categories": ["Video", "Entertainment"]
+    },
+    { "id": "icloud-plus", "name": "iCloud+", "aliases": ["iCloud"], "categories": ["Cloud"] },
+    { "id": "kindle-unlimited", "name": "Kindle Unlimited", "aliases": ["KU"], "categories": ["Books"] },
+    {
+      "id": "line-music",
+      "name": "LINE MUSIC",
+      "localizedName": "LINE MUSIC",
+      "aliases": [],
+      "categories": ["Music"]
+    },
+    { "id": "microsoft-365", "name": "Microsoft 365", "aliases": ["Office 365"], "categories": ["Productivity", "IT"] },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "localizedName": "Netflix",
+      "aliases": [],
+      "categories": ["Video", "Entertainment"],
+      "plans": [
+        { "id": "ad-supported", "name": "Ad-Supported", "localizedName": "広告つきスタンダード" },
+        { "id": "standard", "name": "Standard", "localizedName": "スタンダード" },
+        { "id": "premium", "name": "Premium", "localizedName": "プレミアム" }
+      ]
+    },
+    { "id": "notion", "name": "Notion", "aliases": ["Notion Plus"], "categories": ["Productivity"] },
+    { "id": "nvidia-geforce-now", "name": "GeForce NOW", "aliases": ["NVIDIA GeForce NOW"], "categories": ["Gaming", "Cloud"] },
+    { "id": "openai-api", "name": "OpenAI API", "aliases": ["OpenAI Platform"], "categories": ["AI", "Developer"] },
+    { "id": "patreon", "name": "Patreon", "aliases": [], "categories": ["Creator", "Community"] },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "localizedName": "Spotify",
+      "aliases": ["Spotify Premium"],
+      "categories": ["Music"],
+      "plans": [
+        { "id": "individual", "name": "Individual", "localizedName": "Individual" },
+        { "id": "duo", "name": "Duo", "localizedName": "Duo" },
+        { "id": "family", "name": "Family", "localizedName": "Family" },
+        { "id": "student", "name": "Student", "localizedName": "Student" }
+      ]
+    },
+    { "id": "udemy", "name": "Udemy", "aliases": ["Udemy Personal Plan"], "categories": ["Learning"] },
+    { "id": "x-premium", "name": "X Premium", "aliases": ["Twitter Blue"], "categories": ["Social"] },
+    {
+      "id": "youtube-premium",
+      "name": "YouTube Premium",
+      "localizedName": "YouTubeプレミアム",
+      "aliases": ["YouTube Music"],
+      "categories": ["Video", "Music"],
+      "plans": [
+        { "id": "individual", "name": "Individual", "localizedName": "個人" },
+        { "id": "family", "name": "Family", "localizedName": "ファミリー" },
+        { "id": "student", "name": "Student", "localizedName": "学生" }
+      ]
+    },
+    { "id": "zoho-mail", "name": "Zoho Mail", "aliases": [], "categories": ["Business", "Productivity"] },
+    { "id": "zoom", "name": "Zoom", "aliases": ["Zoom Pro"], "categories": ["Business", "Communication"] }
+  ]
+}

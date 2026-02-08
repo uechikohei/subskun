@@ -1,0 +1,303 @@
+/* Common */
+"common.add" = "Add";
+"common.all" = "All";
+"common.amount" = "Amount";
+"common.approx_amount_format" = "Approx. %@";
+"common.cancel" = "Cancel";
+"common.close" = "Close";
+"common.delete" = "Delete";
+"common.edit" = "Edit";
+"common.error" = "Error";
+"common.hyphen" = "-";
+"common.in_preparation" = "Coming Soon";
+"common.month_number_short" = "%d";
+"common.not_fetched" = "Not fetched";
+"common.ok" = "OK";
+"common.others" = "Others";
+"common.period" = "Period";
+"common.save" = "Save";
+"common.uncategorized" = "Uncategorized";
+"common.unknown_error" = "Unknown error";
+"common.unnamed_service" = "Unnamed Service";
+"common.year_month_format" = "%d-%02d";
+"common.year_number_format" = "%d";
+
+/* Tabs */
+"tab.ratio" = "Ratio";
+"tab.history" = "History";
+"tab.list" = "List";
+"tab.settings" = "Settings";
+
+/* Status / Domain */
+"status.active" = "Active";
+"status.paused" = "Paused";
+"status.cancelled" = "Cancelled";
+"billing_cycle.monthly" = "Monthly";
+"billing_cycle.yearly" = "Yearly";
+"billing_cycle.selected_months" = "Selected Months (Yearly)";
+"billing_cycle.calendar_months" = "Calendar Months (Variable)";
+"billing_cycle.one_time" = "One-time";
+"billing_cycle.custom_days" = "Custom (days)";
+"event_type.projected" = "Projected";
+"event_type.confirmed" = "Confirmed";
+"export.scope.definitions" = "Definitions only";
+"export.scope.history" = "History only";
+"export.scope.both" = "Both";
+
+/* Settings */
+"settings.navigation_title" = "Settings";
+"settings.section.settings" = "Settings";
+"settings.section.app" = "App";
+"settings.account" = "Account";
+"settings.account.not_signed_in" = "Not signed in";
+"settings.account.info.pending" = "Account integration will be added in a future update.";
+"settings.theme.mode" = "Theme";
+"settings.theme.select_title" = "Select Theme";
+"settings.theme.color" = "Theme Color";
+"settings.default_currency" = "Default Currency";
+"settings.language" = "Language";
+"settings.export.csv" = "Export Data as CSV";
+"settings.notification.before_billing" = "Notify Before Billing Date";
+"settings.support" = "Support Subscription Management";
+"settings.thanks" = "Thank you";
+"settings.support.pending" = "Support feature is coming soon.";
+"settings.share" = "Share";
+"settings.share.message" = "I use SubsKun to manage subscriptions.";
+"settings.feedback" = "Feedback";
+"settings.feedback.title" = "Feedback";
+"settings.feedback.pending" = "Feedback channel is coming soon.";
+
+"settings.theme_mode.system" = "System";
+"settings.theme_mode.light" = "Light";
+"settings.theme_mode.dark" = "Dark";
+
+"settings.theme_color.blue" = "Blue";
+"settings.theme_color.indigo" = "Indigo";
+"settings.theme_color.purple" = "Purple";
+"settings.theme_color.teal" = "Teal";
+"settings.theme_color.mint" = "Mint";
+"settings.theme_color.cyan" = "Cyan";
+"settings.theme_color.green" = "Green";
+"settings.theme_color.yellow" = "Yellow";
+"settings.theme_color.orange" = "Orange";
+"settings.theme_color.red" = "Red";
+"settings.theme_color.pink" = "Pink";
+"settings.theme_color.brown" = "Brown";
+"settings.theme_color.voiceover_format" = "%@ theme color";
+
+/* Auth */
+"auth.title" = "Sign in to continue";
+"auth.subtitle" = "Use one account across your devices.";
+"auth.button.google" = "Sign in with Google";
+"auth.notice" = "You need to sign in before using the app.";
+"auth.provider.apple" = "Apple";
+"auth.provider.google" = "Google";
+"auth.default_display_name" = "User";
+"auth.error.google_client_id_missing" = "Google Sign-In is not configured. Set GOOGLE_CLIENT_ID first.";
+"auth.error.google_reversed_client_id_missing" = "Google Sign-In is not configured. Set GOOGLE_REVERSED_CLIENT_ID first.";
+"auth.error.google_url_scheme_missing" = "Google Sign-In is not configured. Add the REVERSED_CLIENT_ID URL scheme to the app.";
+"auth.error.presenting_context_missing" = "Unable to open sign-in screen. Please try again.";
+"auth.error.google_sign_in_failed" = "Google Sign-In failed.";
+"auth.error.apple_sign_in_failed" = "Apple Sign-In failed.";
+"auth.error.email_already_registered" = "The same email address is already registered. Please use a different account.";
+"auth.account.navigation_title" = "Account";
+"auth.account.section.current" = "Current session";
+"auth.account.provider" = "Sign-in method";
+"auth.account.name" = "Display name";
+"auth.account.email" = "Email";
+"auth.account.email.empty" = "Not provided";
+"auth.account.email.apple_unavailable" = "Not provided (Apple only shares it on first authorization)";
+"auth.account.sign_out" = "Sign out";
+"auth.account.sign_out.confirm_title" = "Sign out?";
+"auth.account.sign_out.confirm_message" = "You will need to sign in again on this device.";
+
+/* Categories */
+"category.shopping" = "Shopping";
+"category.video" = "Video";
+"category.gaming" = "Gaming";
+"category.music" = "Music";
+"category.books" = "Books";
+"category.audio" = "Audio";
+"category.ai" = "AI";
+"category.it" = "IT";
+"category.productivity" = "Productivity";
+"category.design" = "Design";
+"category.entertainment" = "Entertainment";
+"category.cloud" = "Cloud";
+"category.developer" = "Developer";
+"category.creator" = "Creator";
+"category.community" = "Community";
+"category.learning" = "Learning";
+"category.social" = "Social";
+"category.business" = "Business";
+"category.communication" = "Communication";
+
+/* Service Catalog / Exchange */
+"service_catalog.source.bundled" = "Bundled";
+"service_catalog.source.cache" = "Cache";
+"service_catalog.source.remote" = "Online";
+"service_catalog.error.load_failed" = "Failed to load service catalog.";
+"service_catalog.error.missing_url" = "Update URL is not configured.";
+"service_catalog.error.refresh_failed" = "Failed to update service catalog. Check your network connection.";
+"exchange_rate.error.fetch_failed" = "Failed to fetch exchange rates. Check your network connection.";
+
+/* Summary / History */
+"summary.navigation_title" = "Ratio";
+"summary.period.monthly" = "Monthly";
+"summary.period.yearly" = "Yearly";
+"summary.picker.period" = "Period";
+"summary.picker.scope" = "Scope";
+"summary.picker.grouping" = "Grouping";
+"summary.grouping.total" = "Total";
+"summary.grouping.category" = "By Category";
+"summary.grouping.service" = "By Service";
+"summary.empty.title" = "No summary data";
+"summary.empty.description" = "Change the period or type to see data.";
+"summary.unconverted_count.format" = "%d events are excluded because exchange rates are unavailable.";
+"summary.plan.unspecified" = "Plan Unspecified";
+"summary.service.unknown" = "Unknown Service";
+
+"history.navigation_title" = "History";
+"history.filter" = "History";
+"history.picker.period" = "Period";
+"history.picker.grouping" = "Grouping";
+"history.picker.scope" = "Scope";
+"history.grouping.category" = "Category";
+"history.grouping.service" = "Service";
+"history.empty.title" = "No history available";
+"history.empty.description" = "Change the period or type to see data.";
+"history.month.empty" = "No history for this month.";
+"history.year.total_title_format" = "%@ Total";
+"history.unconverted_count.format" = "%d events are excluded because exchange rates are unavailable.";
+
+/* Export */
+"export.navigation_title" = "Export";
+"export.section.format" = "Format";
+"export.file_format" = "File Format";
+"export.section.scope" = "Scope";
+"export.target" = "Export Target";
+"export.button.share" = "Export and Share";
+"export.section.latest" = "Latest Output";
+"export.error.alert_title" = "Export Failed";
+"export.error.failed" = "Failed to export. Please check storage and permissions.";
+"export.error.csv_encoding_failed" = "Failed to encode CSV.";
+
+/* Subscription List */
+"subscription.list.navigation_title" = "Subscriptions";
+"subscription.list.search_prompt" = "Search by service";
+"subscription.list.filter" = "Filter";
+"subscription.list.filter.status" = "Status";
+"subscription.list.filter.category" = "Category";
+"subscription.list.empty.title" = "No subscriptions";
+"subscription.list.empty.description" = "Tap + in the bottom-right to add one.";
+"subscription.list.add" = "Add subscription";
+"subscription.list.delete.alert.title" = "Delete this item?";
+"subscription.list.delete.alert.message" = "This action cannot be undone.";
+"subscription.list.error.delete_failed" = "Could not delete. Please try again.";
+"subscription.list.error.regenerate_failed" = "Failed to regenerate history.";
+
+/* Subscription Row */
+"subscription.row.next_billing_format" = "Next: %@";
+"subscription.row.no_next_billing" = "No upcoming charge";
+
+/* Subscription Detail */
+"subscription.detail.section.basic" = "Basic Info";
+"subscription.detail.section.billing_history" = "Billing History";
+"subscription.detail.history.empty" = "No history to display";
+"subscription.detail.delete.confirm_title" = "Delete this subscription?";
+"subscription.detail.delete.confirm_message" = "This subscription and its history will be deleted.";
+"subscription.detail.event.overridden" = "Overridden";
+"subscription.detail.confirmed_total.with_unconverted_format" = "%@ (%d unconverted)";
+"subscription.detail.error.confirm_failed" = "Failed to confirm event.";
+"subscription.detail.error.delete_failed" = "Failed to delete subscription.";
+"subscription.detail.error.regenerate_failed" = "Failed to regenerate history.";
+
+"subscription.field.service_name" = "Service";
+"subscription.field.plan" = "Plan";
+"subscription.field.status" = "Status";
+"subscription.field.amount" = "Amount";
+"subscription.field.jpy_reference" = "JPY Reference";
+"subscription.field.currency" = "Currency";
+"subscription.field.category" = "Category";
+"subscription.field.first_billing_date" = "Base Billing Date";
+"subscription.field.cancellation_date" = "Cancellation Date";
+"subscription.field.billing_cycle" = "Cycle";
+"subscription.field.payment_method" = "Payment Method";
+"subscription.field.url" = "URL";
+"subscription.field.confirmed_total" = "Confirmed Total";
+"subscription.field.memo" = "Memo";
+"subscription.field.image" = "Image";
+
+"subscription.cycle.monthly.every_month" = "Monthly (every month)";
+"subscription.cycle.monthly.skip_format" = "Monthly (skip %d months)";
+"subscription.cycle.yearly.format" = "Yearly (every %d years)";
+"subscription.cycle.selected_months.empty" = "Selected Months (not set)";
+"subscription.cycle.selected_months.format" = "Selected Months (%@)";
+"subscription.cycle.calendar_months.empty" = "Calendar Months (not set)";
+"subscription.cycle.calendar_months.format" = "Calendar Months (%@)";
+"subscription.cycle.one_time" = "One-time (base billing date only)";
+"subscription.cycle.custom_days.format" = "Custom (every %d days)";
+
+/* Billing Event Edit */
+"billing_event.edit.navigation_title" = "Edit Billing Event";
+"billing_event.edit.section" = "Billing Event";
+"billing_event.edit.billed_at_format" = "Billing Date: %@";
+"billing_event.edit.error.save_failed" = "Failed to save.";
+
+/* Subscription Edit */
+"subscription.edit.navigation_title.add" = "Add Subscription";
+"subscription.edit.navigation_title.edit" = "Edit Subscription";
+"subscription.edit.error.save_failed" = "Could not save. Please try again.";
+"subscription.edit.jpy_reference.format" = "JPY reference: %@ ≒ %@ (1 %@ = %@ JPY)";
+"subscription.edit.jpy_reference.pending" = "JPY conversion will appear after rates are fetched.";
+"subscription.edit.history.recorded_format" = "Recorded: %@";
+"subscription.edit.history.more_format" = "%@ and %d more";
+"subscription.edit.validation.service_required" = "Service name is required.";
+"subscription.edit.validation.amount_min" = "Amount must be 0 or higher.";
+"subscription.edit.validation.amount_max" = "Amount must be 1,000,000 JPY or less.";
+"subscription.edit.validation.currency_required" = "Currency code is required.";
+"subscription.edit.validation.selected_months_required" = "Select at least one billing month for Selected Months.";
+"subscription.edit.validation.calendar_months_required" = "Select at least one year/month for Calendar Months.";
+"subscription.edit.validation.no_future_history" = "Future months are not allowed in past billing history.";
+"subscription.edit.validation.cancellation_date_required" = "Cancellation date is required when status is Cancelled.";
+"subscription.edit.validation.duplicate_service_plan" = "This service and plan already exist. Change the plan name.";
+"subscription.edit.category.add_title" = "Add Category";
+"subscription.edit.category.name_placeholder" = "Category name";
+
+"currency_picker.navigation_title" = "Select Currency";
+"currency_picker.search_prompt" = "Currency code / name";
+"currency_picker.section.preferred" = "Frequently Used";
+"currency_picker.section.all" = "All Currencies";
+
+/* Remaining literal UI in SubscriptionEdit */
+"登録内容" = "Details";
+"サービス名" = "Service Name";
+"カテゴリー" = "Category";
+"未設定" = "Not set";
+"支払い周期" = "Billing Cycle";
+"1ヶ月に1回" = "Once a month";
+"1年に1回" = "Once a year";
+"年額料金" = "Yearly Fee";
+"月額料金" = "Monthly Fee";
+"初回支払い日" = "First Payment Date";
+"追加項目" = "Additional Fields";
+"プラン" = "Plan";
+"プラン名" = "Plan Name";
+"支払い方法" = "Payment Method";
+"メモ" = "Memo";
+"画像" = "Image";
+"画像を選択" = "Select Image";
+"画像を削除" = "Remove Image";
+"詳細設定 (任意)" = "Advanced Settings (Optional)";
+"利用状況" = "Usage Status";
+"過去課金履歴を編集" = "Edit Past Billing History";
+"過去に支払った月をチェックすると、集計・可視化に反映されます。" = "Checked past paid months are reflected in analytics and visualization.";
+"解約日の翌月以降は、非課金として × 表示されます。" = "Months after cancellation are marked as non-billing (×).";
+"一時停止中は、現在月の翌月以降を非課金として × 表示します。" = "When paused, months after the current month are marked as non-billing (×).";
+"この年を全選択" = "Select all for this year";
+"この年をクリア" = "Clear this year";
+"利用状況 / 過去課金履歴" = "Usage Status / Past Billing History";
+"例: Apple Music" = "e.g. Apple Music";
+"例: Free / Plus / Pro" = "e.g. Free / Plus / Pro";
+"例: クレジットカード / デビットカード" = "e.g. Credit Card / Debit Card";
+"解約日" = "Cancellation Date";

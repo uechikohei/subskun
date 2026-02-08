@@ -1,0 +1,303 @@
+/* Common */
+"common.add" = "追加";
+"common.all" = "すべて";
+"common.amount" = "金額";
+"common.approx_amount_format" = "約 %@";
+"common.cancel" = "キャンセル";
+"common.close" = "閉じる";
+"common.delete" = "削除";
+"common.edit" = "編集";
+"common.error" = "エラー";
+"common.hyphen" = "-";
+"common.in_preparation" = "準備中";
+"common.month_number_short" = "%d月";
+"common.not_fetched" = "未取得";
+"common.ok" = "OK";
+"common.others" = "その他";
+"common.period" = "期間";
+"common.save" = "保存";
+"common.uncategorized" = "未分類";
+"common.unknown_error" = "不明なエラー";
+"common.unnamed_service" = "未設定サービス";
+"common.year_month_format" = "%d年%d月";
+"common.year_number_format" = "%d年";
+
+/* Tabs */
+"tab.ratio" = "割合";
+"tab.history" = "履歴";
+"tab.list" = "一覧";
+"tab.settings" = "設定";
+
+/* Status / Domain */
+"status.active" = "利用中";
+"status.paused" = "一時停止";
+"status.cancelled" = "解約";
+"billing_cycle.monthly" = "月次";
+"billing_cycle.yearly" = "年次";
+"billing_cycle.selected_months" = "月指定(毎年)";
+"billing_cycle.calendar_months" = "年月指定(変動)";
+"billing_cycle.one_time" = "単発";
+"billing_cycle.custom_days" = "カスタム(日数)";
+"event_type.projected" = "見込み";
+"event_type.confirmed" = "確定";
+"export.scope.definitions" = "定義のみ";
+"export.scope.history" = "履歴のみ";
+"export.scope.both" = "両方";
+
+/* Settings */
+"settings.navigation_title" = "設定";
+"settings.section.settings" = "設定";
+"settings.section.app" = "アプリ";
+"settings.account" = "アカウント情報";
+"settings.account.not_signed_in" = "未ログイン";
+"settings.account.info.pending" = "アカウント連携機能は今後追加予定です。";
+"settings.theme.mode" = "テーマを選択";
+"settings.theme.select_title" = "テーマを選択";
+"settings.theme.color" = "テーマカラーを選択";
+"settings.default_currency" = "デフォルト通貨";
+"settings.language" = "言語";
+"settings.export.csv" = "データをCSVエクスポート";
+"settings.notification.before_billing" = "支払い日前に通知でお知らせ";
+"settings.support" = "サブスク管理を応援する";
+"settings.thanks" = "ありがとうございます";
+"settings.support.pending" = "応援機能は準備中です。";
+"settings.share" = "シェア";
+"settings.share.message" = "SubsKunでサブスク管理をしています。";
+"settings.feedback" = "ご意見・ご要望";
+"settings.feedback.title" = "ご意見受付";
+"settings.feedback.pending" = "フィードバック窓口は準備中です。";
+
+"settings.theme_mode.system" = "システム";
+"settings.theme_mode.light" = "ライト";
+"settings.theme_mode.dark" = "ダーク";
+
+"settings.theme_color.blue" = "ブルー";
+"settings.theme_color.indigo" = "インディゴ";
+"settings.theme_color.purple" = "パープル";
+"settings.theme_color.teal" = "ティール";
+"settings.theme_color.mint" = "ミント";
+"settings.theme_color.cyan" = "シアン";
+"settings.theme_color.green" = "グリーン";
+"settings.theme_color.yellow" = "イエロー";
+"settings.theme_color.orange" = "オレンジ";
+"settings.theme_color.red" = "レッド";
+"settings.theme_color.pink" = "ピンク";
+"settings.theme_color.brown" = "ブラウン";
+"settings.theme_color.voiceover_format" = "%@ のテーマカラー";
+
+/* Auth */
+"auth.title" = "アカウントでログイン";
+"auth.subtitle" = "端末をまたいで同じアカウントを利用できます。";
+"auth.button.google" = "Googleでサインイン";
+"auth.notice" = "ログインしない場合はアプリを利用できません。";
+"auth.provider.apple" = "Apple";
+"auth.provider.google" = "Google";
+"auth.default_display_name" = "ユーザー";
+"auth.error.google_client_id_missing" = "Googleサインイン設定が未完了です。GOOGLE_CLIENT_IDを設定してください。";
+"auth.error.google_reversed_client_id_missing" = "Googleサインイン設定が未完了です。GOOGLE_REVERSED_CLIENT_IDを設定してください。";
+"auth.error.google_url_scheme_missing" = "Googleサインイン設定が未完了です。URLスキームにREVERSED_CLIENT_IDを登録してください。";
+"auth.error.presenting_context_missing" = "サインイン画面を開けませんでした。再度お試しください。";
+"auth.error.google_sign_in_failed" = "Googleサインインに失敗しました。";
+"auth.error.apple_sign_in_failed" = "Appleサインインに失敗しました。";
+"auth.error.email_already_registered" = "同じメールアドレスが重複して登録されています。別のアカウントでお試しください。";
+"auth.account.navigation_title" = "アカウント";
+"auth.account.section.current" = "現在のログイン情報";
+"auth.account.provider" = "ログイン方法";
+"auth.account.name" = "表示名";
+"auth.account.email" = "メールアドレス";
+"auth.account.email.empty" = "未提供";
+"auth.account.email.apple_unavailable" = "未提供（Appleは初回認証時のみ提供）";
+"auth.account.sign_out" = "ログアウト";
+"auth.account.sign_out.confirm_title" = "ログアウトしますか？";
+"auth.account.sign_out.confirm_message" = "ログアウトすると、この端末では再度サインインが必要です。";
+
+/* Categories */
+"category.shopping" = "ショッピング";
+"category.video" = "動画配信";
+"category.gaming" = "ゲーム";
+"category.music" = "音楽";
+"category.books" = "読書";
+"category.audio" = "音声";
+"category.ai" = "AI";
+"category.it" = "IT";
+"category.productivity" = "仕事効率化";
+"category.design" = "デザイン";
+"category.entertainment" = "エンタメ";
+"category.cloud" = "クラウド";
+"category.developer" = "開発";
+"category.creator" = "クリエイター";
+"category.community" = "コミュニティ";
+"category.learning" = "学習";
+"category.social" = "SNS";
+"category.business" = "ビジネス";
+"category.communication" = "コミュニケーション";
+
+/* Service Catalog / Exchange */
+"service_catalog.source.bundled" = "同梱データ";
+"service_catalog.source.cache" = "キャッシュ";
+"service_catalog.source.remote" = "オンライン更新";
+"service_catalog.error.load_failed" = "サービス辞書を読み込めませんでした。";
+"service_catalog.error.missing_url" = "更新先URLが設定されていません。";
+"service_catalog.error.refresh_failed" = "サービス辞書を更新できませんでした。ネットワークをご確認ください。";
+"exchange_rate.error.fetch_failed" = "為替レートを取得できませんでした。ネットワークをご確認ください。";
+
+/* Summary / History */
+"summary.navigation_title" = "割合";
+"summary.period.monthly" = "月間";
+"summary.period.yearly" = "年間";
+"summary.picker.period" = "期間";
+"summary.picker.scope" = "対象";
+"summary.picker.grouping" = "表示";
+"summary.grouping.total" = "合計";
+"summary.grouping.category" = "カテゴリ別";
+"summary.grouping.service" = "サービス別";
+"summary.empty.title" = "集計データがありません";
+"summary.empty.description" = "対象期間や対象タイプを変更してください。";
+"summary.unconverted_count.format" = "為替未対応のイベントが %d 件あり、集計から除外しています。";
+"summary.plan.unspecified" = "プラン未指定";
+"summary.service.unknown" = "不明サービス";
+
+"history.navigation_title" = "履歴";
+"history.filter" = "履歴";
+"history.picker.period" = "期間";
+"history.picker.grouping" = "表示";
+"history.picker.scope" = "対象";
+"history.grouping.category" = "カテゴリ";
+"history.grouping.service" = "サービス";
+"history.empty.title" = "表示できる履歴がありません";
+"history.empty.description" = "期間や対象タイプを変更してください。";
+"history.month.empty" = "この月の履歴はありません。";
+"history.year.total_title_format" = "%@ 合計";
+"history.unconverted_count.format" = "為替未対応のイベントが %d 件あり、履歴から除外しています。";
+
+/* Export */
+"export.navigation_title" = "エクスポート";
+"export.section.format" = "形式";
+"export.file_format" = "ファイル形式";
+"export.section.scope" = "対象";
+"export.target" = "エクスポート対象";
+"export.button.share" = "エクスポートして共有";
+"export.section.latest" = "最新の出力";
+"export.error.alert_title" = "エクスポート失敗";
+"export.error.failed" = "エクスポートに失敗しました。容量/権限をご確認ください。";
+"export.error.csv_encoding_failed" = "CSVのエンコードに失敗しました。";
+
+/* Subscription List */
+"subscription.list.navigation_title" = "サブスク一覧";
+"subscription.list.search_prompt" = "サービス名を検索";
+"subscription.list.filter" = "絞り込み";
+"subscription.list.filter.status" = "状態";
+"subscription.list.filter.category" = "カテゴリ";
+"subscription.list.empty.title" = "サブスクがありません";
+"subscription.list.empty.description" = "右下の + ボタンから追加できます";
+"subscription.list.add" = "サブスクを追加";
+"subscription.list.delete.alert.title" = "削除しますか？";
+"subscription.list.delete.alert.message" = "この操作は取り消せません。";
+"subscription.list.error.delete_failed" = "削除できませんでした。再度お試しください。";
+"subscription.list.error.regenerate_failed" = "履歴の再生成に失敗しました。";
+
+/* Subscription Row */
+"subscription.row.next_billing_format" = "次回: %@";
+"subscription.row.no_next_billing" = "次回請求なし";
+
+/* Subscription Detail */
+"subscription.detail.section.basic" = "基本情報";
+"subscription.detail.section.billing_history" = "請求履歴";
+"subscription.detail.history.empty" = "表示できる履歴がありません";
+"subscription.detail.delete.confirm_title" = "削除しますか？";
+"subscription.detail.delete.confirm_message" = "このサブスクと履歴は削除されます。";
+"subscription.detail.event.overridden" = "上書き";
+"subscription.detail.confirmed_total.with_unconverted_format" = "%@ (未換算 %d件)";
+"subscription.detail.error.confirm_failed" = "確定に失敗しました。";
+"subscription.detail.error.delete_failed" = "削除できませんでした。";
+"subscription.detail.error.regenerate_failed" = "履歴の再生成に失敗しました。";
+
+"subscription.field.service_name" = "サービス名";
+"subscription.field.plan" = "プラン";
+"subscription.field.status" = "状態";
+"subscription.field.amount" = "金額";
+"subscription.field.jpy_reference" = "JPY換算(参考)";
+"subscription.field.currency" = "通貨";
+"subscription.field.category" = "カテゴリ";
+"subscription.field.first_billing_date" = "基準請求日";
+"subscription.field.cancellation_date" = "解約日";
+"subscription.field.billing_cycle" = "周期";
+"subscription.field.payment_method" = "支払い方法";
+"subscription.field.url" = "URL";
+"subscription.field.confirmed_total" = "累計確定額";
+"subscription.field.memo" = "メモ";
+"subscription.field.image" = "画像";
+
+"subscription.cycle.monthly.every_month" = "月次 (毎月)";
+"subscription.cycle.monthly.skip_format" = "月次 (%dか月休止)";
+"subscription.cycle.yearly.format" = "年次 (%d年ごと)";
+"subscription.cycle.selected_months.empty" = "月指定 (未設定)";
+"subscription.cycle.selected_months.format" = "月指定 (%@)";
+"subscription.cycle.calendar_months.empty" = "年月指定 (未設定)";
+"subscription.cycle.calendar_months.format" = "年月指定 (%@)";
+"subscription.cycle.one_time" = "単発 (基準請求日のみ)";
+"subscription.cycle.custom_days.format" = "カスタム (%d日ごと)";
+
+/* Billing Event Edit */
+"billing_event.edit.navigation_title" = "請求イベント編集";
+"billing_event.edit.section" = "請求イベント";
+"billing_event.edit.billed_at_format" = "請求日: %@";
+"billing_event.edit.error.save_failed" = "保存に失敗しました。";
+
+/* Subscription Edit */
+"subscription.edit.navigation_title.add" = "サブスク追加";
+"subscription.edit.navigation_title.edit" = "サブスク編集";
+"subscription.edit.error.save_failed" = "保存できませんでした。再度お試しください。";
+"subscription.edit.jpy_reference.format" = "JPY換算目安: %@ ≒ %@ (1 %@ = %@円)";
+"subscription.edit.jpy_reference.pending" = "JPY換算はレート取得後に表示されます。";
+"subscription.edit.history.recorded_format" = "記録済み: %@";
+"subscription.edit.history.more_format" = "%@ ほか%d件";
+"subscription.edit.validation.service_required" = "サービス名は必須です。";
+"subscription.edit.validation.amount_min" = "金額は0以上で入力してください。";
+"subscription.edit.validation.amount_max" = "金額は100万円以下で入力してください。";
+"subscription.edit.validation.currency_required" = "通貨コードは必須です。";
+"subscription.edit.validation.selected_months_required" = "月指定では1つ以上の課金月を選択してください。";
+"subscription.edit.validation.calendar_months_required" = "年月指定では1つ以上の課金年月を選択してください。";
+"subscription.edit.validation.no_future_history" = "過去課金履歴には未来の年月は選択できません。";
+"subscription.edit.validation.cancellation_date_required" = "解約状態では解約日が必要です。";
+"subscription.edit.validation.duplicate_service_plan" = "同じサービスとプランは既に登録済みです。プラン名を変更してください。";
+"subscription.edit.category.add_title" = "カテゴリーを追加";
+"subscription.edit.category.name_placeholder" = "カテゴリー名";
+
+"currency_picker.navigation_title" = "通貨を選択";
+"currency_picker.search_prompt" = "通貨コード / 名称";
+"currency_picker.section.preferred" = "よく使う通貨";
+"currency_picker.section.all" = "全通貨";
+
+/* Remaining literal UI in SubscriptionEdit */
+"登録内容" = "登録内容";
+"サービス名" = "サービス名";
+"カテゴリー" = "カテゴリー";
+"未設定" = "未設定";
+"支払い周期" = "支払い周期";
+"1ヶ月に1回" = "1ヶ月に1回";
+"1年に1回" = "1年に1回";
+"年額料金" = "年額料金";
+"月額料金" = "月額料金";
+"初回支払い日" = "初回支払い日";
+"追加項目" = "追加項目";
+"プラン" = "プラン";
+"プラン名" = "プラン名";
+"支払い方法" = "支払い方法";
+"メモ" = "メモ";
+"画像" = "画像";
+"画像を選択" = "画像を選択";
+"画像を削除" = "画像を削除";
+"詳細設定 (任意)" = "詳細設定 (任意)";
+"利用状況" = "利用状況";
+"過去課金履歴を編集" = "過去課金履歴を編集";
+"過去に支払った月をチェックすると、集計・可視化に反映されます。" = "過去に支払った月をチェックすると、集計・可視化に反映されます。";
+"解約日の翌月以降は、非課金として × 表示されます。" = "解約日の翌月以降は、非課金として × 表示されます。";
+"一時停止中は、現在月の翌月以降を非課金として × 表示します。" = "一時停止中は、現在月の翌月以降を非課金として × 表示します。";
+"この年を全選択" = "この年を全選択";
+"この年をクリア" = "この年をクリア";
+"利用状況 / 過去課金履歴" = "利用状況 / 過去課金履歴";
+"例: Apple Music" = "例: Apple Music";
+"例: Free / Plus / Pro" = "例: Free / Plus / Pro";
+"例: クレジットカード / デビットカード" = "例: クレジットカード / デビットカード";
+"解約日" = "解約日";
