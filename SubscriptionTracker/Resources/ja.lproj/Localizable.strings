@@ -113,6 +113,7 @@
 "auth.account.delete_account" = "アカウントを削除";
 "auth.account.delete_account.confirm_title" = "アカウントを削除しますか？";
 "auth.account.delete_account.confirm_message" = "すべてのサブスクリプションデータと設定が完全に削除されます。この操作は取り消せません。";
+"auth.error.delete_account_data_failed" = "データの削除に失敗しました。再度お試しください。";
 
 /* Categories */
 "category.shopping" = "ショッピング";

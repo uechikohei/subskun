@@ -22,6 +22,8 @@ targets:
       - path: SubscriptionTracker
       - path: SubscriptionTracker/App/GoogleService-Info.plist
         buildPhase: resources
+      - path: SubscriptionTracker/App/AuthKey.p8
+        buildPhase: resources
     dependencies:
       - package: GoogleSignIn
         product: GoogleSignIn
@@ -34,6 +36,7 @@ targets:
         CODE_SIGN_ENTITLEMENTS: SubscriptionTracker/App/SubsKun.entitlements
         GOOGLE_CLIENT_ID: '618727271553-duekfg7vpuik5sqf0d5h5ihjcpiqpjrs.apps.googleusercontent.com'
         GOOGLE_REVERSED_CLIENT_ID: 'com.googleusercontent.apps.618727271553-duekfg7vpuik5sqf0d5h5ihjcpiqpjrs'
+        APPLE_KEY_ID: 'BYZ8HLV9UW'
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: '1'
     scheme:

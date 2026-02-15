@@ -1,4 +1,5 @@
 import AuthenticationServices
+import CryptoKit
 import Foundation
 import GoogleSignIn
 import SwiftData
@@ -10,6 +11,7 @@ final class AuthenticationStore: ObservableObject {
         static let currentUser = "auth.currentUser"
         static let appleIdentityCache = "auth.appleIdentityCache"
         static let emailRegistry = "auth.emailRegistry"
+        static let appleRefreshToken = "apple.refresh_token"
     }
 
     @Published private(set) var currentUser: AuthSessionUser?
@@ -96,7 +98,14 @@ final class AuthenticationStore: ObservableObject {
                 return
             }
             let sessionUser = makeAppleSessionUser(from: credential)
-            _ = applySignedInCandidate(sessionUser)
+            guard applySignedInCandidate(sessionUser) else { return }
+
+            if let authCode = credential.authorizationCode,
+               let codeString = String(data: authCode, encoding: .utf8) {
+                Task {
+                    await exchangeAppleAuthorizationCode(codeString)
+                }
+            }
         case .failure(let error):
             if Self.isUserCancellation(error) {
                 return
@@ -116,14 +125,27 @@ final class AuthenticationStore: ObservableObject {
         applySignedInUser(nil)
     }
 
-    func deleteAccount(modelContext: ModelContext, settings: AppSettings) {
+    func deleteAccount(modelContext: ModelContext, settings: AppSettings) async {
         if currentUser?.provider == .google {
-            GIDSignIn.sharedInstance.disconnect()
+            do {
+                try await GIDSignIn.sharedInstance.disconnect()
+            } catch {
+                print("[AuthenticationStore] Google disconnect failed: \(error)")
+            }
             GIDSignIn.sharedInstance.signOut()
         }
 
-        try? modelContext.delete(model: Subscription.self)
-        try? modelContext.save()
+        if currentUser?.provider == .apple {
+            await revokeAppleToken()
+        }
+
+        do {
+            try modelContext.delete(model: Subscription.self)
+            try modelContext.save()
+        } catch {
+            lastErrorMessage = String(localized: "auth.error.delete_account_data_failed")
+            return
+        }
 
         defaults.removeObject(forKey: Keys.currentUser)
         defaults.removeObject(forKey: Keys.appleIdentityCache)
@@ -398,6 +420,84 @@ final class AuthenticationStore: ObservableObject {
             return true
         }
         return nsError.domain == NSURLErrorDomain && nsError.code == NSURLErrorCancelled
+    }
+
+    // MARK: - Apple Token Helpers
+
+    private func exchangeAppleAuthorizationCode(_ code: String) async {
+        guard let clientSecret = makeAppleClientSecret() else { return }
+
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.uechikohei.subskun"
+        do {
+            let refreshToken = try await AppleTokenService.exchangeAuthorizationCode(
+                code,
+                clientID: bundleID,
+                clientSecret: clientSecret
+            )
+            if let tokenData = refreshToken.data(using: .utf8) {
+                KeychainHelper.save(key: Keys.appleRefreshToken, data: tokenData)
+            }
+        } catch {
+            print("[AuthenticationStore] Apple auth code exchange failed: \(error)")
+        }
+    }
+
+    private func revokeAppleToken() async {
+        guard let tokenData = KeychainHelper.read(key: Keys.appleRefreshToken),
+              let refreshToken = String(data: tokenData, encoding: .utf8) else {
+            return
+        }
+
+        guard let clientSecret = makeAppleClientSecret() else {
+            KeychainHelper.delete(key: Keys.appleRefreshToken)
+            return
+        }
+
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.uechikohei.subskun"
+        do {
+            try await AppleTokenService.revokeToken(
+                refreshToken: refreshToken,
+                clientID: bundleID,
+                clientSecret: clientSecret
+            )
+        } catch {
+            print("[AuthenticationStore] Apple token revocation failed: \(error)")
+        }
+
+        KeychainHelper.delete(key: Keys.appleRefreshToken)
+    }
+
+    private func makeAppleClientSecret() -> String? {
+        guard let keyID = infoStringValue(forKey: "APPLE_KEY_ID") else {
+            return nil
+        }
+
+        guard let p8Path = Bundle.main.path(forResource: "AuthKey", ofType: "p8"),
+              let p8Data = FileManager.default.contents(atPath: p8Path),
+              let p8String = String(data: p8Data, encoding: .utf8) else {
+            return nil
+        }
+
+        let keyContent = p8String
+            .replacingOccurrences(of: "-----BEGIN PRIVATE KEY-----", with: "")
+            .replacingOccurrences(of: "-----END PRIVATE KEY-----", with: "")
+            .replacingOccurrences(of: "\n", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard let keyData = Data(base64Encoded: keyContent),
+              let privateKey = try? P256.Signing.PrivateKey(rawRepresentation: keyData) else {
+            return nil
+        }
+
+        let teamID = "SW4S6FR5L9"
+        let bundleID = Bundle.main.bundleIdentifier ?? "com.uechikohei.subskun"
+
+        return try? AppleTokenService.makeClientSecret(
+            teamID: teamID,
+            keyID: keyID,
+            bundleID: bundleID,
+            privateKey: privateKey
+        )
     }
 }
 

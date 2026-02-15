@@ -113,6 +113,7 @@
 "auth.account.delete_account" = "Delete Account";
 "auth.account.delete_account.confirm_title" = "Delete your account?";
 "auth.account.delete_account.confirm_message" = "All subscription data and settings will be permanently deleted. This action cannot be undone.";
+"auth.error.delete_account_data_failed" = "Failed to delete data. Please try again.";
 
 /* Categories */
 "category.shopping" = "Shopping";
