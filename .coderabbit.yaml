@@ -61,7 +61,6 @@ knowledge_base:
   web_search:
     enabled: true
   code_guidelines:
-    - path: "CLAUDE.md"
-      instructions: >
-        「コーディング規約」セクションの命名規約（アプリケーション名の表記ルールと
-        ソースコード命名規則）をレビュー基準として適用する。
+    enabled: true
+    filePatterns:
+      - "CLAUDE.md"

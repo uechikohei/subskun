@@ -1,6 +1,7 @@
 import SwiftData
 import SwiftUI
 
+/// サブスク君 - サブスクリプション管理アプリのエントリポイント
 @main
 struct SubsKunApp: App {
     @StateObject private var authStore = AuthenticationStore()
