@@ -30,7 +30,7 @@ final class ServiceCatalogStore: ObservableObject {
         defaults: UserDefaults = .standard,
         bundle: Bundle = .main,
         bundledPayloadData: Data? = nil,
-        remoteCatalogURL: URL? = URL(string: "https://raw.githubusercontent.com/uechikohei/subs-kun/main/SubscriptionTracker/Resources/service_catalog.json")
+        remoteCatalogURL: URL? = URL(string: "https://raw.githubusercontent.com/uechikohei/subskun/main/SubscriptionTracker/Resources/service_catalog.json")
     ) {
         self.session = session
         self.defaults = defaults

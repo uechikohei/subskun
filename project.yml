@@ -35,6 +35,7 @@ targets:
         GOOGLE_CLIENT_ID: '618727271553-duekfg7vpuik5sqf0d5h5ihjcpiqpjrs.apps.googleusercontent.com'
         GOOGLE_REVERSED_CLIENT_ID: 'com.googleusercontent.apps.618727271553-duekfg7vpuik5sqf0d5h5ihjcpiqpjrs'
         CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: '1'
     scheme:
       gatherCoverageData: true
       testTargets:

@@ -1,0 +1,66 @@
+# CodeRabbit Configuration
+# https://docs.coderabbit.ai/reference/configuration
+
+language: ja-JP
+
+tone_instructions: >
+  レビューは建設的かつ簡潔に。Swift/SwiftUI のベストプラクティスと
+  CLAUDE.md の規約に沿った指摘を行う。
+
+early_access: false
+enable_free_tier: true
+
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  collapse_walkthrough: true
+  sequence_diagrams: true
+  changed_files_summary: true
+  assess_linked_issues: true
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - develop
+      - main
+
+  path_instructions:
+    - path: "SubscriptionTracker/App/**"
+      instructions: >
+        アプリエントリポイント・ルートビュー。AppDelegate/SceneDelegate 相当の
+        責務のみに限定されているか確認する。
+    - path: "SubscriptionTracker/Data/**"
+      instructions: >
+        SwiftData モデル層。スキーマ変更時は VersionedSchema と
+        SchemaMigrationPlan が適切に定義されているか確認する。
+    - path: "SubscriptionTracker/Domain/**"
+      instructions: >
+        ドメインモデル・ビジネスロジック層。UI依存がないこと、
+        テスタビリティが確保されていることを確認する。
+    - path: "SubscriptionTracker/Features/**"
+      instructions: >
+        機能別画面。View と ViewModel の責務分離、
+        @Observable/@State の適切な使い分けを確認する。
+    - path: "SubscriptionTrackerTests/**"
+      instructions: >
+        ユニットテスト。テストケースの網羅性と命名規則
+        (test_対象_条件_期待結果) を確認する。
+    - path: "**/*.swift"
+      instructions: >
+        Swift 6.0 の Strict Concurrency 準拠を確認する。
+        Sendable 違反や data race の可能性を指摘する。
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false
+  learnings:
+    scope: local
+  web_search:
+    enabled: true
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "CLAUDE.md"
