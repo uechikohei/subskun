@@ -26,6 +26,7 @@
 		46130A374811B63876A80432 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35AB63D008356AF43E3F6E /* AppSettingsTests.swift */; };
 		4A0038440C52B813B194089F /* AuthenticationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51BCABFC0D557E19482F103 /* AuthenticationStore.swift */; };
 		4C99B91BCCFABC6B5A0479A0 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A04BFF40BD890F3186A3BC /* ExportView.swift */; };
+		4D7394439D19480818DA82E8 /* AccountDeletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47AEED4F10E4789B7979054 /* AccountDeletionTests.swift */; };
 		4E8B43E2EAD7FEAC2255F32B /* ExchangeRateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFB15F629936DD49B8AE84 /* ExchangeRateStore.swift */; };
 		53417CA10C31F130BDEF81F7 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15846E71634E87A7B8C5465D /* Date+Formatting.swift */; };
 		58B534A2AF7C3E8389E265DF /* SubscriptionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66F59BF2389D0E9AB21132D /* SubscriptionEditView.swift */; };
@@ -115,6 +116,7 @@
 		D51BCABFC0D557E19482F103 /* AuthenticationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStore.swift; sourceTree = "<group>"; };
 		DA48AE81E90B76C508880019 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		DEE1A83D68D40FAF80CC6E01 /* AuthGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGateView.swift; sourceTree = "<group>"; };
+		E47AEED4F10E4789B7979054 /* AccountDeletionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeletionTests.swift; sourceTree = "<group>"; };
 		EC4CD3E5D550E5808C051ACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2F6B7903486CD0D30FB0537 /* SubscriptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionRowView.swift; sourceTree = "<group>"; };
 		F66F59BF2389D0E9AB21132D /* SubscriptionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionEditView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		52A1865DA460C32AB1E8B8B0 /* SubscriptionTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				E47AEED4F10E4789B7979054 /* AccountDeletionTests.swift */,
 				7E35AB63D008356AF43E3F6E /* AppSettingsTests.swift */,
 				CC40B6CB30F47A2A836E30AF /* AuthEmailRegistryTests.swift */,
 				F9218EC21878DEE5118FBDC5 /* BillingEngineTests.swift */,
@@ -523,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D7394439D19480818DA82E8 /* AccountDeletionTests.swift in Sources */,
 				46130A374811B63876A80432 /* AppSettingsTests.swift in Sources */,
 				D6F9633528229F8E6511865F /* AuthEmailRegistryTests.swift in Sources */,
 				B8429FB2ADAE6A97EE979EEA /* BillingEngineTests.swift in Sources */,

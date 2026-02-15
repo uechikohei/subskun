@@ -168,6 +168,24 @@ final class AppSettings: ObservableObject {
         self.notifyBeforeBilling = defaults.object(forKey: Keys.notifyBeforeBilling) as? Bool ?? true
     }
 
+    func resetToDefaults() {
+        defaults.removeObject(forKey: Keys.defaultCurrency)
+        defaults.removeObject(forKey: Keys.pastMonths)
+        defaults.removeObject(forKey: Keys.futureMonths)
+        defaults.removeObject(forKey: Keys.includePausedInSummary)
+        defaults.removeObject(forKey: Keys.themeMode)
+        defaults.removeObject(forKey: Keys.themeColor)
+        defaults.removeObject(forKey: Keys.notifyBeforeBilling)
+
+        defaultCurrency = "JPY"
+        pastMonths = 6
+        futureMonths = 12
+        includePausedInSummary = false
+        themeModeRaw = ThemeMode.system.rawValue
+        themeColorRaw = ThemeColorOption.blue.rawValue
+        notifyBeforeBilling = true
+    }
+
     var generationSignature: String {
         "\(pastMonths)-\(futureMonths)-\(defaultCurrency)"
     }

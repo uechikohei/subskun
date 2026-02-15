@@ -110,6 +110,9 @@
 "auth.account.sign_out" = "ログアウト";
 "auth.account.sign_out.confirm_title" = "ログアウトしますか？";
 "auth.account.sign_out.confirm_message" = "ログアウトすると、この端末では再度サインインが必要です。";
+"auth.account.delete_account" = "アカウントを削除";
+"auth.account.delete_account.confirm_title" = "アカウントを削除しますか？";
+"auth.account.delete_account.confirm_message" = "すべてのサブスクリプションデータと設定が完全に削除されます。この操作は取り消せません。";
 
 /* Categories */
 "category.shopping" = "ショッピング";

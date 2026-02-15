@@ -1,6 +1,7 @@
 import AuthenticationServices
 import Foundation
 import GoogleSignIn
+import SwiftData
 import UIKit
 
 @MainActor
@@ -112,6 +113,26 @@ final class AuthenticationStore: ObservableObject {
         if currentUser?.provider == .google {
             GIDSignIn.sharedInstance.signOut()
         }
+        applySignedInUser(nil)
+    }
+
+    func deleteAccount(modelContext: ModelContext, settings: AppSettings) {
+        if currentUser?.provider == .google {
+            GIDSignIn.sharedInstance.disconnect()
+            GIDSignIn.sharedInstance.signOut()
+        }
+
+        try? modelContext.delete(model: Subscription.self)
+        try? modelContext.save()
+
+        defaults.removeObject(forKey: Keys.currentUser)
+        defaults.removeObject(forKey: Keys.appleIdentityCache)
+        defaults.removeObject(forKey: Keys.emailRegistry)
+        defaults.removeObject(forKey: "exchange_rate.snapshot.v1")
+        defaults.removeObject(forKey: "service_catalog.payload.v1")
+
+        settings.resetToDefaults()
+        emailRegistry = AuthEmailRegistry()
         applySignedInUser(nil)
     }
 

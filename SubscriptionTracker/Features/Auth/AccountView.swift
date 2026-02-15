@@ -1,9 +1,13 @@
+import SwiftData
 import SwiftUI
 
 struct AccountView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var authStore: AuthenticationStore
+    @EnvironmentObject private var settings: AppSettings
     @State private var isSignOutDialogPresented = false
+    @State private var isDeleteAccountDialogPresented = false
 
     private var user: AuthSessionUser? {
         authStore.currentUser
@@ -35,6 +39,14 @@ struct AccountView: View {
                     Text(String(localized: "auth.account.sign_out"))
                 }
             }
+
+            Section {
+                Button(role: .destructive) {
+                    isDeleteAccountDialogPresented = true
+                } label: {
+                    Text(String(localized: "auth.account.delete_account"))
+                }
+            }
         }
         .navigationTitle(String(localized: "auth.account.navigation_title"))
         .navigationBarTitleDisplayMode(.inline)
@@ -50,6 +62,19 @@ struct AccountView: View {
             Button(String(localized: "common.cancel"), role: .cancel) {}
         } message: {
             Text(String(localized: "auth.account.sign_out.confirm_message"))
+        }
+        .confirmationDialog(
+            String(localized: "auth.account.delete_account.confirm_title"),
+            isPresented: $isDeleteAccountDialogPresented,
+            titleVisibility: .visible
+        ) {
+            Button(String(localized: "auth.account.delete_account"), role: .destructive) {
+                authStore.deleteAccount(modelContext: modelContext, settings: settings)
+                dismiss()
+            }
+            Button(String(localized: "common.cancel"), role: .cancel) {}
+        } message: {
+            Text(String(localized: "auth.account.delete_account.confirm_message"))
         }
     }
 
