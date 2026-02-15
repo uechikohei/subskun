@@ -478,14 +478,7 @@ final class AuthenticationStore: ObservableObject {
             return nil
         }
 
-        let keyContent = p8String
-            .replacingOccurrences(of: "-----BEGIN PRIVATE KEY-----", with: "")
-            .replacingOccurrences(of: "-----END PRIVATE KEY-----", with: "")
-            .replacingOccurrences(of: "\n", with: "")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-
-        guard let keyData = Data(base64Encoded: keyContent),
-              let privateKey = try? P256.Signing.PrivateKey(rawRepresentation: keyData) else {
+        guard let privateKey = try? P256.Signing.PrivateKey(pemRepresentation: p8String) else {
             return nil
         }
 

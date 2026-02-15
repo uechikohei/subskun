@@ -110,9 +110,11 @@ enum AppleTokenService {
     }
 
     private static func urlEncode(_ params: [String: String]) -> String {
-        params.map { key, value in
-            let escapedKey = key.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? key
-            let escapedValue = value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? value
+        var allowed = CharacterSet.urlQueryAllowed
+        allowed.remove(charactersIn: "+=&")
+        return params.map { key, value in
+            let escapedKey = key.addingPercentEncoding(withAllowedCharacters: allowed) ?? key
+            let escapedValue = value.addingPercentEncoding(withAllowedCharacters: allowed) ?? value
             return "\(escapedKey)=\(escapedValue)"
         }.joined(separator: "&")
     }
