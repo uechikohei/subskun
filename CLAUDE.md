@@ -37,7 +37,16 @@ swift package resolve                # SPM 依存解決
 
 ## コーディング規約
 
-### 命名規則
+### 命名規約
+
+#### アプリケーション名
+
+| 用途 | 表記 | 例 |
+|------|------|-----|
+| Display Name（UI表示・App Store） | サブスク君 | アプリ名、ロゴ、OGP |
+| Machine Name（リポジトリ・パッケージ） | subskun | `uechikohei/subskun` |
+
+#### ソースコード命名規則
 
 Swift 標準の命名規則に従う（単体プロジェクトのためプレフィックス不要）:
 
