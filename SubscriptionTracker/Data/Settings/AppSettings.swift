@@ -168,6 +168,17 @@ final class AppSettings: ObservableObject {
         self.notifyBeforeBilling = defaults.object(forKey: Keys.notifyBeforeBilling) as? Bool ?? true
     }
 
+    /// Reset persisted settings to their default values and update the in-memory published properties.
+    /// 
+    /// This clears the stored values for default currency, past/future months, inclusion of paused items in summaries,
+    /// theme mode, theme color, and billing notifications, then assigns the corresponding default values:
+    /// - `defaultCurrency` -> `"JPY"`
+    /// - `pastMonths` -> `6`
+    /// - `futureMonths` -> `12`
+    /// - `includePausedInSummary` -> `false`
+    /// - `themeModeRaw` -> `ThemeMode.system.rawValue`
+    /// - `themeColorRaw` -> `ThemeColorOption.blue.rawValue`
+    /// - `notifyBeforeBilling` -> `true`
     func resetToDefaults() {
         defaults.removeObject(forKey: Keys.defaultCurrency)
         defaults.removeObject(forKey: Keys.pastMonths)

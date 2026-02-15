@@ -109,6 +109,9 @@ final class AuthenticationStore: ObservableObject {
         _ = GIDSignIn.sharedInstance.handle(url)
     }
 
+    /// Signs the user out of any provider-specific session and clears the stored authenticated user.
+    /// 
+    /// If the current signed-in user authenticated via Google, the Google Sign-In session is explicitly signed out before clearing the local authentication state.
     func signOut() {
         if currentUser?.provider == .google {
             GIDSignIn.sharedInstance.signOut()
@@ -116,6 +119,12 @@ final class AuthenticationStore: ObservableObject {
         applySignedInUser(nil)
     }
 
+    /// Deletes the current user's account data locally and resets related app state.
+    /// 
+    /// If the signed-in provider is Google, disconnects and signs out the Google session. Removes the app's persisted authentication and related caches, deletes subscription data from the supplied `ModelContext`, resets app settings to defaults, clears the in-memory email registry, and signs out the user locally.
+    /// - Parameters:
+    ///   - modelContext: The `ModelContext` used to delete and save subscription-related data.
+    ///   - settings: The app settings instance to reset to its default values.
     func deleteAccount(modelContext: ModelContext, settings: AppSettings) {
         if currentUser?.provider == .google {
             GIDSignIn.sharedInstance.disconnect()
