@@ -1,9 +1,14 @@
+import SwiftData
 import SwiftUI
 
 struct AccountView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var authStore: AuthenticationStore
+    @EnvironmentObject private var settings: AppSettings
     @State private var isSignOutDialogPresented = false
+    @State private var isDeleteAccountDialogPresented = false
+    @State private var isDeleting = false
 
     private var user: AuthSessionUser? {
         authStore.currentUser
@@ -35,6 +40,14 @@ struct AccountView: View {
                     Text(String(localized: "auth.account.sign_out"))
                 }
             }
+
+            Section {
+                Button(role: .destructive) {
+                    isDeleteAccountDialogPresented = true
+                } label: {
+                    Text(String(localized: "auth.account.delete_account"))
+                }
+            }
         }
         .navigationTitle(String(localized: "auth.account.navigation_title"))
         .navigationBarTitleDisplayMode(.inline)
@@ -51,6 +64,41 @@ struct AccountView: View {
         } message: {
             Text(String(localized: "auth.account.sign_out.confirm_message"))
         }
+        .confirmationDialog(
+            String(localized: "auth.account.delete_account.confirm_title"),
+            isPresented: $isDeleteAccountDialogPresented,
+            titleVisibility: .visible
+        ) {
+            Button(String(localized: "auth.account.delete_account"), role: .destructive) {
+                isDeleting = true
+                Task {
+                    await authStore.deleteAccount(modelContext: modelContext, settings: settings)
+                    isDeleting = false
+                    if authStore.currentUser == nil {
+                        dismiss()
+                    }
+                }
+            }
+            Button(String(localized: "common.cancel"), role: .cancel) {}
+        } message: {
+            Text(String(localized: "auth.account.delete_account.confirm_message"))
+        }
+        .alert(
+            String(localized: "common.error"),
+            isPresented: Binding(
+                get: { authStore.lastErrorMessage != nil },
+                set: { if !$0 { authStore.lastErrorMessage = nil } }
+            )
+        ) {
+            Button(String(localized: "common.ok")) {
+                authStore.lastErrorMessage = nil
+            }
+        } message: {
+            if let message = authStore.lastErrorMessage {
+                Text(message)
+            }
+        }
+        .disabled(isDeleting)
     }
 
     private var emailDisplayText: String {

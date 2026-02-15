@@ -110,6 +110,10 @@
 "auth.account.sign_out" = "Sign out";
 "auth.account.sign_out.confirm_title" = "Sign out?";
 "auth.account.sign_out.confirm_message" = "You will need to sign in again on this device.";
+"auth.account.delete_account" = "Delete Account";
+"auth.account.delete_account.confirm_title" = "Delete your account?";
+"auth.account.delete_account.confirm_message" = "All subscription data and settings will be permanently deleted. This action cannot be undone.";
+"auth.error.delete_account_data_failed" = "Failed to delete data. Please try again.";
 
 /* Categories */
 "category.shopping" = "Shopping";

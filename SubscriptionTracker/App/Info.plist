@@ -31,6 +31,8 @@
 	<string>$(GOOGLE_CLIENT_ID)</string>
 	<key>GOOGLE_REVERSED_CLIENT_ID</key>
 	<string>$(GOOGLE_REVERSED_CLIENT_ID)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.finance</string>
 	<key>CFBundleVersion</key>
