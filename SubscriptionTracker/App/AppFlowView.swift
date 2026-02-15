@@ -1,5 +1,6 @@
 import SwiftUI
 
+/// 認証状態に応じてルートビューを切り替えるフロー制御View
 struct AppFlowView: View {
     @EnvironmentObject private var authStore: AuthenticationStore
 
