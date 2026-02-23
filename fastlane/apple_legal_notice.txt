@@ -1,0 +1,77 @@
+Subject: FORMAL NOTICE - Service Failure and Demand for Immediate Resolution / subskun (com.uechikohei.subskun)
+
+To Apple Inc. / Apple Developer Program Support,
+
+This is a formal notice regarding Apple's failure to provide the services I am paying for under the Apple Developer Program.
+
+STATEMENT OF FACTS
+
+I am a registered member of the Apple Developer Program and pay the annual membership fee of approximately 20,000 JPY (99 USD). I enrolled in this program for the sole purpose of distributing my app, subskun, on the App Store. My app is complete, fully functional, and compliant with all applicable App Store Review Guidelines.
+
+Despite this, my app has been blocked from release for over THREE WEEKS. I am currently in a state where I can take NO ACTION WHATSOEVER within App Store Connect. I cannot resubmit. I cannot reply to the reviewer. I cannot remove the app. I cannot resolve the issues raised. Every function available to me as a developer has been rendered non-functional by Apple's own systems and review process.
+
+I am paying for a service that is not being provided.
+
+THE SERVICE I AM PAYING FOR
+
+The Apple Developer Program membership fee grants access to App Store distribution, including the app review process. A functional review process, at minimum, requires:
+
+1. That reviews are conducted competently, with reviewers actually verifying features before claiming they do not exist.
+2. That rejection feedback contains specific, actionable resolution steps.
+3. That the developer has a functioning communication channel to respond to review feedback.
+4. That Apple's own systems are internally consistent and do not create impossible requirements.
+
+Apple has failed on ALL FOUR of these points for my submission.
+
+HOW APPLE HAS FAILED
+
+1. INCOMPETENT REVIEW: My app's account deletion feature has been fully implemented and present in every submitted build. The reviewer claimed it does not exist. It does. It is a red button labeled "Delete Account" accessible from Settings, then Account. The reviewer did not verify it. This is not a borderline case. This is a failure to perform basic review duties.
+
+2. NO ACTIONABLE GUIDANCE: Every rejection has told me to fix issues without explaining how. The iPad screenshot rejection says to "upload new screenshots" but does not explain what an iPhone-only app should provide when App Store Connect mandates iPad screenshots that the review process then rejects.
+
+3. COMMUNICATION CHANNEL IS BROKEN: The "Reply to App Review" function in App Store Connect returns "An error has occurred" every time I attempt to submit a response. I am locked out of the only designated communication channel with the review team. I cannot even explain to the reviewer that account deletion exists. I cannot ask questions. I cannot provide information. I am silenced.
+
+4. APPLE'S SYSTEMS CONTRADICT EACH OTHER: App Store Connect requires 13-inch iPad screenshots to allow submission. The review process rejects those screenshots because my iPhone-only app displays in iPhone compatibility mode on iPad (which is Apple's own system behavior). I cannot remove the iPad screenshot requirement. I cannot produce screenshots that satisfy both systems simultaneously. Apple has created a deadlock that only Apple can resolve, and has provided no path to resolution.
+
+WHAT THIS MEANS FOR MY BUSINESS
+
+I built this app as a proof-of-concept product intended for initial release to validate the business model and begin generating revenue. The planned release date was over three weeks ago. Every day of delay pushes back revenue generation, user feedback collection, and product iteration.
+
+The delays are not caused by my app being non-compliant. I have addressed every review issue raised. The delays are caused entirely by Apple's review process failures and system-level contradictions.
+
+I paid approximately 20,000 JPY for the Apple Developer Program membership. In return, I expected to be able to distribute my app through a functional process. Instead, I have spent three weeks unable to release a completed, compliant app because:
+- Apple's reviewer did not check for a feature that exists
+- Apple's systems created an impossible screenshot requirement
+- Apple's communication tools do not work
+- Apple has provided no resolution path
+
+I am paying money for nothing. The service I purchased is not being delivered.
+
+FORMAL DEMANDS
+
+1. IMMEDIATE RESOLUTION: Resolve the iPad screenshot deadlock and allow my app to be resubmitted and reviewed without the contradictory iPad screenshot requirement. This is a problem in Apple's system, and Apple must fix it.
+
+2. IMMEDIATE COMMUNICATION RESTORATION: Fix the "Reply to App Review" function for my submission, or provide an alternative direct communication channel with the review team.
+
+3. EXPEDITED REVIEW: Once resubmission is possible, process the review within 24 hours given the three weeks of delays caused by Apple.
+
+4. WRITTEN RESPONSE: Provide a written response acknowledging these failures and confirming the resolution timeline.
+
+NOTICE OF FURTHER ACTION
+
+If these issues are not resolved within a reasonable timeframe, I will consider the following actions:
+
+- Filing a formal complaint with the Japan Consumer Affairs Agency regarding failure to provide paid services.
+- Filing a complaint with the Japan Fair Trade Commission regarding anti-competitive practices that prevent app distribution through the only available iOS platform.
+- Pursuing legal remedies for recovery of the Apple Developer Program membership fee and damages caused by the service failure, including lost business opportunities and wasted development costs.
+- Making this situation publicly known through developer communities, forums, and social media to warn other developers of the risks of depending on Apple's review process.
+
+I want to be clear: I do not want to take these steps. I want to release my app. I want the service I paid for to function. But Apple has left me with no other options by blocking every avenue available to me within App Store Connect.
+
+I expect a substantive response, not an automated reply.
+
+kohei
+Apple Developer Program Member
+Team ID: SW4S6FR5L9
+Bundle ID: com.uechikohei.subskun
+Submission ID: db0ba319-c292-4699-a572-f2fd5dafaab0
