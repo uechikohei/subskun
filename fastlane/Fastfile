@@ -6,12 +6,10 @@ default_platform(:ios)
 # 使い方:
 #   1. App Store Connect で API キーを作成（Admin権限）
 #   2. .p8 ファイルを fastlane/ に配置
-#   3. 環境変数を設定:
-#        export ASC_KEY_ID="your_key_id"
-#        export ASC_ISSUER_ID="your_issuer_id"
-#        export ASC_KEY_PATH="fastlane/AuthKey_XXXXXXXX.p8"
-#
-#   または .env ファイルに記載（fastlane/.env）
+#   3. 環境変数を設定（fastlane/.env に記載）:
+#        ASC_KEY_ID=your_key_id
+#        ASC_ISSUER_ID=your_issuer_id
+#        ASC_KEY_PATH=fastlane/AuthKey_XXXXXXXX.p8
 # ============================================================
 
 def api_key
@@ -24,6 +22,24 @@ def api_key
   )
 end
 
+# プロジェクトルートの絶対パス
+PROJECT_ROOT = File.expand_path("../../", __FILE__)
+
+# API キーの JSON ファイルを生成（CLI サブコマンド用）
+def ensure_api_key_json
+  json_path = File.join(PROJECT_ROOT, "fastlane", "api_key.json")
+  key_path = ENV["ASC_KEY_PATH"]
+  key_content = File.read(key_path)
+  json = {
+    "key_id" => ENV["ASC_KEY_ID"],
+    "issuer_id" => ENV["ASC_ISSUER_ID"],
+    "key" => key_content,
+    "in_house" => false
+  }
+  File.write(json_path, JSON.generate(json))
+  json_path
+end
+
 platform :ios do
   # ----------------------------------------------------------
   # スクリーンショットダウンロード
@@ -31,16 +47,28 @@ platform :ios do
   # ----------------------------------------------------------
   desc "既存アプリからスクリーンショットをダウンロード"
   lane :download_screenshots do
-    deliver(
-      api_key: api_key,
-      app_identifier: "com.uechikohei.subskun",
-      download_screenshots: true,
-      skip_binary_upload: true,
-      skip_metadata: false,
-      skip_screenshots: false,
-      force: true
-    )
+    json_path = ensure_api_key_json
+    begin
+      sh("cd #{PROJECT_ROOT} && fastlane deliver download_screenshots --api_key_path #{json_path} --app_identifier com.uechikohei.subskun")
+    ensure
+      File.delete(json_path) if File.exist?(json_path)
+    end
     UI.success("スクリーンショットを fastlane/screenshots/ にダウンロードしました")
+  end
+
+  # ----------------------------------------------------------
+  # メタデータダウンロード
+  # 既存アプリからメタデータをダウンロードする
+  # ----------------------------------------------------------
+  desc "既存アプリからメタデータをダウンロード"
+  lane :download_metadata do
+    json_path = ensure_api_key_json
+    begin
+      sh("cd '#{PROJECT_ROOT}' && fastlane deliver download_metadata --api_key_path '#{json_path}' --app_identifier com.uechikohei.subskun")
+    ensure
+      File.delete(json_path) if File.exist?(json_path)
+    end
+    UI.success("メタデータを fastlane/metadata/ にダウンロードしました")
   end
 
   # ----------------------------------------------------------
@@ -61,33 +89,11 @@ platform :ios do
   end
 
   # ----------------------------------------------------------
-  # ビルド
-  # ----------------------------------------------------------
-  desc "アプリをビルド"
-  lane :build do
-    # XcodeGen でプロジェクト再生成
-    sh("cd .. && xcodegen generate")
-
-    build_app(
-      scheme: "SubsKun",
-      export_method: "app-store",
-      export_options: {
-        provisioningProfiles: {
-          "com.uechikohei.subskun" => "match AppStore com.uechikohei.subskun"
-        }
-      },
-      output_directory: "./fastlane/build",
-      output_name: "SubsKun.ipa",
-      clean: true
-    )
-  end
-
-  # ----------------------------------------------------------
   # ビルド（自動署名版 - Automatic Signing 用）
   # ----------------------------------------------------------
   desc "アプリをビルド（Automatic Signing）"
   lane :build_auto do
-    sh("cd .. && xcodegen generate")
+    sh("cd '#{PROJECT_ROOT}' && xcodegen generate")
 
     build_app(
       scheme: "SubsKun",
@@ -163,25 +169,21 @@ platform :ios do
   end
 
   # ----------------------------------------------------------
-  # スクショダウンロード → iPad分削除 → 再アップロード
+  # スクショダウンロード → iPad分削除
   # （今回の審査対応用）
   # ----------------------------------------------------------
-  desc "iPadスクリーンショットを削除してiPhone分のみ再アップロード"
+  desc "iPadスクリーンショットを削除してiPhone分のみ残す"
   lane :fix_screenshots do
     # 1. 既存スクショをダウンロード
     download_screenshots
 
     # 2. iPad用スクリーンショットを削除
-    ipad_patterns = [
-      "fastlane/screenshots/ja/iPad*",
-      "fastlane/screenshots/en/iPad*",
-      "fastlane/screenshots/*/iPad*"
-    ]
-    ipad_patterns.each do |pattern|
-      Dir.glob(pattern).each do |file|
-        File.delete(file)
-        UI.message("削除: #{file}")
-      end
+    ipad_files = Dir.glob("fastlane/screenshots/**/*iPad*") +
+                 Dir.glob("fastlane/screenshots/**/*IPAD*") +
+                 Dir.glob("fastlane/screenshots/**/*ipad*")
+    ipad_files.uniq.each do |file|
+      File.delete(file)
+      UI.message("削除: #{file}")
     end
 
     UI.success("iPadスクリーンショットを削除しました。iPhone分のみ残っています。")
