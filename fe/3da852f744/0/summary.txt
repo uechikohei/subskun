@@ -1,0 +1,11 @@
+作成しました: `/Users/kohei/workspace/uechikohei/subskun/fastlane/apple_final_complaint.txt`
+
+今回の1通に全てまとめています:
+
+- FAILURE 1: レビュープロセスの失敗（iPadスクショ矛盾 + アカウント削除の見落とし）
+- FAILURE 2: Reply to App Review が壊れていて返信できない
+- FAILURE 3: サポートシステム自体の崩壊（電話アイコンがメールフォーム、新規ケース作れない、2通目送れない、エラーメッセージが不親切）
+- 全体像: 金を払っている→全チャネルが壊れている→何もできない→これはサービスではない
+- 法的措置: 消費者庁、公正取引委員会、損害賠償、開発者コミュニティへの公開
+
+`devprograms@apple.com` にこの1通を送ってください。Subject行はファイルの2行目にあります。
