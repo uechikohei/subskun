@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "9691f9b63f8c",
+  "strategy": "auto-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "fastlane/apple_complaint.txt"
+  ],
+  "sessions": [
+    {
+      "metadata": "/96/91f9b63f8c/0/metadata.json",
+      "transcript": "/96/91f9b63f8c/0/full.jsonl",
+      "context": "",
+      "content_hash": "/96/91f9b63f8c/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4,
+    "cache_creation_tokens": 3517,
+    "cache_read_tokens": 213123,
+    "output_tokens": 3071,
+    "api_call_count": 2
+  }
+}
