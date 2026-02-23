@@ -1,0 +1,18 @@
+メタデータは空でした（App Store Connectにまだ詳細なメタデータが登録されていない状態のようです）。
+
+スクリーンショットの保存は完了しました。ここからの手順です:
+
+---
+
+## 次のステップ
+
+1. (手動) App Store Connect で既存のアプリレコードを削除してください
+   - App Store Connect → アプリ → subskun → 「App Information」→ 画面下部の「Remove App」
+   - 削除後、同じBundle IDで新規作成が可能になります
+
+2. 削除が完了したら教えてください。その後は以下を自動で実行します:
+   - `fastlane create_app` — 新規アプリレコード作成
+   - `fastlane build_auto` — ビルド
+   - `fastlane upload_binary` — バイナリアップロード
+   - `fastlane upload_metadata` — スクリーンショットアップロード
+   - `fastlane submit_review` — 審査提出
