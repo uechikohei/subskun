@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.4.5",
+  "checkpoint_id": "c274b73a779d",
+  "strategy": "auto-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "fastlane/apple_legal_notice.txt"
+  ],
+  "sessions": [
+    {
+      "metadata": "/c2/74b73a779d/0/metadata.json",
+      "transcript": "/c2/74b73a779d/0/full.jsonl",
+      "context": "",
+      "content_hash": "/c2/74b73a779d/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4,
+    "cache_creation_tokens": 1714,
+    "cache_read_tokens": 220989,
+    "output_tokens": 1438,
+    "api_call_count": 2
+  }
+}
