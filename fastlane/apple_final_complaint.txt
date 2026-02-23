@@ -1,0 +1,135 @@
+To: devprograms@apple.com
+Subject: URGENT FORMAL COMPLAINT - Complete Service Failure Across All Support Channels / subskun (com.uechikohei.subskun)
+
+
+I am a paying member of the Apple Developer Program (Team ID: SW4S6FR5L9). I am writing because Apple has failed me at every single level — the app review process, the App Store Connect system, and now the developer support system itself. Every channel available to me is broken. I have nowhere left to turn.
+
+Let me be direct: I pay Apple approximately 20,000 JPY annually for the Apple Developer Program. For that money, I expect to be able to distribute my app and receive functioning support when issues arise. Instead, I have been locked out of every system, ignored by every process, and given zero path forward for over THREE WEEKS. This is not a service. This is a hostage situation where Apple holds my app and my money and provides nothing in return.
+
+
+============================
+FAILURE 1: APP REVIEW PROCESS
+============================
+
+My app subskun (Bundle ID: com.uechikohei.subskun, Submission ID: db0ba319-c292-4699-a572-f2fd5dafaab0) has been rejected repeatedly for over three weeks. Every rejection, I have addressed. Every time, the review team has either missed implemented features or created contradictory requirements.
+
+REJECTION A: iPad Screenshots (Guideline 2.3.3)
+
+The reviewer rejected iPad screenshots for showing an "iPhone device frame." My app is iPhone-only. TARGETED_DEVICE_FAMILY = 1. There is ZERO iPad UI code. The iPhone compatibility frame on iPad is APPLE'S OWN SYSTEM BEHAVIOR. I cannot change how Apple's compatibility mode renders my app.
+
+Apple has created an IMPOSSIBLE situation:
+- App Store Connect DEMANDS 13-inch iPad screenshots to submit.
+- App Review REJECTS those screenshots.
+- I CANNOT remove the iPad screenshot requirement.
+- I CANNOT delete and recreate the app (bundle ID cannot be reused after build upload per Apple's own documentation).
+- I deleted the iPad screenshots attempting to comply, and now I CANNOT RESUBMIT AT ALL.
+
+Apple's system requirements contradict Apple's review standards. This is Apple's failure, not mine. No one has told me how to resolve this. No one has even acknowledged this contradiction exists.
+
+REJECTION B: Account Deletion (Guideline 5.1.1(v))
+
+The reviewer stated account deletion does not exist. IT DOES. It has existed in EVERY build submitted. The reviewer DID NOT CHECK.
+
+Exact path: Launch app > Sign in > Settings tab (gear icon) > Account > RED "Delete Account" button > Confirm. Five taps. The button is RED. It is labeled "Delete Account." It follows standard iOS destructive action conventions. There is nothing hidden about it.
+
+Source code locations for verification:
+- UI: SubscriptionTracker/Features/Auth/AccountView.swift (lines 44-100)
+- Logic: SubscriptionTracker/Features/Auth/AuthenticationStore.swift (lines 128-159)
+- Tests: SubscriptionTrackerTests/AccountDeletionTests.swift
+
+This feature was implemented, tested, and present in the build. The reviewer's claim that it does not exist is wrong. Period.
+
+
+================================================
+FAILURE 2: APP STORE CONNECT COMMUNICATION SYSTEM
+================================================
+
+After receiving the rejection, I attempted to use the "Reply to App Review" feature in App Store Connect to respond to the reviewer. The system returns "An error has occurred. Try again later." EVERY SINGLE TIME.
+
+I have tried multiple times. Different text. Different lengths. It does not work. The one channel Apple provides for developers to communicate with reviewers is BROKEN for my submission.
+
+This means:
+- I cannot explain to the reviewer that account deletion exists.
+- I cannot ask the reviewer for clarification on the iPad screenshot issue.
+- I cannot provide any information requested by App Review.
+- I am completely silenced.
+
+Apple rejected my app, gave me no actionable guidance, and then broke the only tool I have to respond. I am expected to resolve issues I cannot discuss with anyone.
+
+
+==========================================
+FAILURE 3: DEVELOPER SUPPORT SYSTEM ITSELF
+==========================================
+
+Unable to use Reply to App Review, I attempted to contact Apple Developer Support through the official support channels. What I encountered was yet another layer of failure.
+
+BROKEN UI: On the Apple Developer Support page, I clicked what appeared to be a phone icon to request phone support. Instead of initiating a phone call or showing a phone number, it redirected me to an EMAIL form. A phone icon that opens an email form. This is deceptive and confusing UX that wasted my time when I was already in an urgent situation.
+
+UNABLE TO CREATE NEW CASES: The Developer Support interface only shows past inquiries. There is no clear path to create a new support case. The navigation is unintuitive and undocumented.
+
+BLOCKED FROM SENDING: I managed to send one support request through the email form. When I attempted to send a second, critical follow-up message, the system displayed "An error occurred while processing your request" and refused to send. No explanation of why. No indication of what limit I hit. No alternative provided.
+
+So to summarize Apple's support infrastructure:
+- Reply to App Review: BROKEN.
+- Developer Support new case creation: INVISIBLE.
+- Support form submission: BLOCKED after one message with no explanation.
+- Phone support: A phone icon that is actually an email form.
+
+Every single support channel has failed. I am paying for a service that includes support, and support does not function.
+
+
+====================
+THE COMPLETE PICTURE
+====================
+
+Here is where I stand as a paying Apple Developer Program member:
+
+- My app is COMPLETE and COMPLIANT. It meets all guidelines.
+- I CANNOT release it because of incorrect review and contradictory system requirements.
+- I CANNOT communicate with the review team because Reply to App Review is broken.
+- I CANNOT submit new support requests because the support form blocks me.
+- I CANNOT remove and recreate the app because Apple's policy prevents bundle ID reuse.
+- I CANNOT resubmit because Apple's system demands screenshots that Apple's review rejects.
+
+I have paid money. I have built a compliant app. I have addressed every review issue. And I am locked out of everything. Every door Apple provides is closed, locked, or broken.
+
+This app was planned as a proof-of-concept release to validate the business model and begin generating revenue. Three weeks of delay means three weeks of lost market opportunity, wasted marketing investment, and inability to collect user feedback for product iteration. Every additional day compounds the damage.
+
+
+==================
+DEMANDS
+==================
+
+1. FIX THE iPAD SCREENSHOT DEADLOCK: Either waive the iPad screenshot requirement for my iPhone-only app, or accept iPhone compatibility mode screenshots, or provide EXACT step-by-step instructions for an alternative solution. This is Apple's system contradiction and Apple must resolve it.
+
+2. VERIFY ACCOUNT DELETION: Have a reviewer follow the five-step path described above and confirm the feature exists BEFORE issuing any further rejection.
+
+3. FIX REPLY TO APP REVIEW: The communication tool is broken for my submission. Fix it immediately or provide a direct alternative.
+
+4. IMMEDIATE ESCALATION: This case must be handled by a senior representative with authority to resolve system-level issues, not by frontline support following a script.
+
+5. EXPEDITED REVIEW: Once I can resubmit, process the review within 24 hours. Three weeks of delay caused entirely by Apple warrants priority treatment.
+
+6. FIX YOUR SUPPORT SYSTEMS: Error messages with no explanation, phone icons that open email forms, inability to create new support cases — this is not acceptable for a paid service. Developers deserve functional support infrastructure.
+
+
+==================
+NOTICE
+==================
+
+If these issues are not resolved within a reasonable timeframe, I will pursue the following:
+
+- Formal complaint to the Japan Consumer Affairs Agency (消費者庁) for failure to deliver paid services.
+- Formal complaint to the Japan Fair Trade Commission (公正取引委員会) regarding platform gatekeeper practices that trap developers in non-functional processes with no recourse.
+- Legal action for recovery of membership fees and damages caused by Apple's service failures.
+- Public disclosure of this experience through developer communities and media to ensure other developers are aware of the risks.
+
+I am not making threats. I am stating facts about the options remaining to me after Apple has closed every other door.
+
+I demand a substantive response from a person with actual authority to resolve these issues. Do not send me an automated reply. Do not redirect me to a broken system. Fix this.
+
+kohei
+Apple Developer Program Member
+Team ID: SW4S6FR5L9
+Bundle ID: com.uechikohei.subskun
+Submission ID: db0ba319-c292-4699-a572-f2fd5dafaab0
