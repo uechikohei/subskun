@@ -1,0 +1,8 @@
+app_identifier("com.uechikohei.subskun")
+team_id("SW4S6FR5L9")
+
+for_platform :ios do
+  for_lane :create_app do
+    app_identifier("com.uechikohei.subskun")
+  end
+end

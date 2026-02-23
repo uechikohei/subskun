@@ -1,0 +1,190 @@
+default_platform(:ios)
+
+# ============================================================
+# App Store Connect API キー設定
+# ============================================================
+# 使い方:
+#   1. App Store Connect で API キーを作成（Admin権限）
+#   2. .p8 ファイルを fastlane/ に配置
+#   3. 環境変数を設定:
+#        export ASC_KEY_ID="your_key_id"
+#        export ASC_ISSUER_ID="your_issuer_id"
+#        export ASC_KEY_PATH="fastlane/AuthKey_XXXXXXXX.p8"
+#
+#   または .env ファイルに記載（fastlane/.env）
+# ============================================================
+
+def api_key
+  app_store_connect_api_key(
+    key_id: ENV["ASC_KEY_ID"],
+    issuer_id: ENV["ASC_ISSUER_ID"],
+    key_filepath: ENV["ASC_KEY_PATH"],
+    duration: 1200,
+    in_house: false
+  )
+end
+
+platform :ios do
+  # ----------------------------------------------------------
+  # スクリーンショットダウンロード
+  # 既存アプリからスクリーンショットをダウンロードする
+  # ----------------------------------------------------------
+  desc "既存アプリからスクリーンショットをダウンロード"
+  lane :download_screenshots do
+    deliver(
+      api_key: api_key,
+      app_identifier: "com.uechikohei.subskun",
+      download_screenshots: true,
+      skip_binary_upload: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      force: true
+    )
+    UI.success("スクリーンショットを fastlane/screenshots/ にダウンロードしました")
+  end
+
+  # ----------------------------------------------------------
+  # 新規アプリ作成（iPhone専用）
+  # ----------------------------------------------------------
+  desc "App Store Connect に新しいアプリレコードを作成（iPhone専用）"
+  lane :create_app do
+    create_app_online(
+      api_key: api_key,
+      app_identifier: "com.uechikohei.subskun",
+      app_name: "subskun",
+      language: "Japanese",
+      app_version: "1.0",
+      sku: "com.uechikohei.subskun",
+      platforms: ["ios"]
+    )
+    UI.success("新しいアプリレコードを作成しました")
+  end
+
+  # ----------------------------------------------------------
+  # ビルド
+  # ----------------------------------------------------------
+  desc "アプリをビルド"
+  lane :build do
+    # XcodeGen でプロジェクト再生成
+    sh("cd .. && xcodegen generate")
+
+    build_app(
+      scheme: "SubsKun",
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+          "com.uechikohei.subskun" => "match AppStore com.uechikohei.subskun"
+        }
+      },
+      output_directory: "./fastlane/build",
+      output_name: "SubsKun.ipa",
+      clean: true
+    )
+  end
+
+  # ----------------------------------------------------------
+  # ビルド（自動署名版 - Automatic Signing 用）
+  # ----------------------------------------------------------
+  desc "アプリをビルド（Automatic Signing）"
+  lane :build_auto do
+    sh("cd .. && xcodegen generate")
+
+    build_app(
+      scheme: "SubsKun",
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "automatic",
+        teamID: "SW4S6FR5L9"
+      },
+      output_directory: "./fastlane/build",
+      output_name: "SubsKun.ipa",
+      clean: true
+    )
+  end
+
+  # ----------------------------------------------------------
+  # アップロード（バイナリのみ）
+  # ----------------------------------------------------------
+  desc "ビルド済み IPA を App Store Connect にアップロード"
+  lane :upload_binary do
+    upload_to_app_store(
+      api_key: api_key,
+      ipa: "./fastlane/build/SubsKun.ipa",
+      skip_metadata: true,
+      skip_screenshots: true,
+      force: true
+    )
+  end
+
+  # ----------------------------------------------------------
+  # メタデータ・スクショアップロード
+  # ----------------------------------------------------------
+  desc "メタデータとスクリーンショットをアップロード"
+  lane :upload_metadata do
+    upload_to_app_store(
+      api_key: api_key,
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      skip_metadata: false,
+      force: true,
+      overwrite_screenshots: true
+    )
+  end
+
+  # ----------------------------------------------------------
+  # 審査提出
+  # ----------------------------------------------------------
+  desc "審査に提出"
+  lane :submit_review do
+    upload_to_app_store(
+      api_key: api_key,
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: true,
+      automatic_release: true,
+      force: true,
+      submission_information: {
+        add_id_info_uses_idfa: false
+      }
+    )
+  end
+
+  # ----------------------------------------------------------
+  # フルデプロイ（ビルド → アップロード → メタデータ → 審査提出）
+  # ----------------------------------------------------------
+  desc "ビルドからApp Store審査提出まで一括実行"
+  lane :deploy do
+    build_auto
+    upload_binary
+    upload_metadata
+    submit_review
+    UI.success("審査提出が完了しました！")
+  end
+
+  # ----------------------------------------------------------
+  # スクショダウンロード → iPad分削除 → 再アップロード
+  # （今回の審査対応用）
+  # ----------------------------------------------------------
+  desc "iPadスクリーンショットを削除してiPhone分のみ再アップロード"
+  lane :fix_screenshots do
+    # 1. 既存スクショをダウンロード
+    download_screenshots
+
+    # 2. iPad用スクリーンショットを削除
+    ipad_patterns = [
+      "fastlane/screenshots/ja/iPad*",
+      "fastlane/screenshots/en/iPad*",
+      "fastlane/screenshots/*/iPad*"
+    ]
+    ipad_patterns.each do |pattern|
+      Dir.glob(pattern).each do |file|
+        File.delete(file)
+        UI.message("削除: #{file}")
+      end
+    end
+
+    UI.success("iPadスクリーンショットを削除しました。iPhone分のみ残っています。")
+    UI.message("確認後、 'fastlane upload_metadata' でアップロードしてください。")
+  end
+end

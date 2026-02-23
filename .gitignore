@@ -1,2 +1,11 @@
 # Apple Sign-In private key
 *.p8
+
+# fastlane
+fastlane/build/
+fastlane/screenshots/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/
+fastlane/.env
+fastlane/.env.*
